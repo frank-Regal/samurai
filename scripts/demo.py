@@ -48,7 +48,7 @@ def main(args):
     frame_rate = 30
     if args.save_to_video:
         if osp.isdir(args.video_path):
-            frames = sorted([osp.join(args.video_path, f) for f in os.listdir(args.video_path) if f.endswith((".jpg", ".jpeg", ".JPG", ".JPEG"))])
+            frames = sorted([osp.join(args.video_path, f) for f in os.listdir(args.video_path) if f.endswith((".jpg", ".jpeg", ".JPG", ".JPEG"))], reverse=True)
             loaded_frames = [cv2.imread(frame_path) for frame_path in frames]
             height, width = loaded_frames[0].shape[:2]
         else:
